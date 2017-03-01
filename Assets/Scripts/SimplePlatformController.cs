@@ -5,7 +5,7 @@ using UnityEngine;
 public class SimplePlatformController : MonoBehaviour {
 
 	[HideInInspector] public bool facingRight = true;
-	[HideInInspector] public bool jump = true;
+	[HideInInspector] public bool jump = false;
 
 	public float moveForce = 365f;
 	public float maxSpeed = 5f;
@@ -54,7 +54,7 @@ public class SimplePlatformController : MonoBehaviour {
 		if (jump) {
 			anim.SetTrigger("Jump");
 			rb2d.AddForce(new Vector2(0f, jumpForce));
-			jump = false;
+			jump = false; // no double jumps
 		}
 	}
 
